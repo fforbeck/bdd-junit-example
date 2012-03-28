@@ -1,4 +1,4 @@
-package story;
+package scenario;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 
@@ -24,39 +24,39 @@ import page.GoogleSearchPage;
  * @author felipeforbeck
  * 
  */
-public class PesquisandoNoGoogleStory {
+public class PesquisandoAPalavraGroovyNoGoogleScenario {
 
 	private FirefoxDriver firefox;
 	private GoogleSearchPage googleSearchPage;
 
-	public PesquisandoNoGoogleStory dadoQueOUsuarioAbraONavegador() {
+	public PesquisandoAPalavraGroovyNoGoogleScenario dadoQueOUsuarioAbraONavegador() {
 		firefox = new FirefoxDriver();
 		firefox.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
 		return this;
 	}
 
-	public PesquisandoNoGoogleStory eAcessaAPaginaDoGoogle() {
+	public PesquisandoAPalavraGroovyNoGoogleScenario eAcessaAPaginaDoGoogle() {
 		googleSearchPage = initElements(firefox, GoogleSearchPage.class);
 		googleSearchPage.open("http://www.google.com");
 		return this;
 	}
 
-	public PesquisandoNoGoogleStory quandoDigitarAPalavraGroovy() {
+	public PesquisandoAPalavraGroovyNoGoogleScenario quandoDigitarAPalavraGroovy() {
 		googleSearchPage.type("groovy");
 		return this;
 	}
 
-	public PesquisandoNoGoogleStory eClicarNoBotaoPesquisar() {
+	public PesquisandoAPalavraGroovyNoGoogleScenario eClicarNoBotaoPesquisar() {
 		googleSearchPage.clickOnSearchButton();
 		return this;
 	}
 
-	public PesquisandoNoGoogleStory entaoValidarOTituloDaPagina() {
+	public PesquisandoAPalavraGroovyNoGoogleScenario entaoValidarOTituloDaPagina() {
 		Assert.assertEquals("Google", googleSearchPage.getTitle());
 		return this;
 	}
 
-	public PesquisandoNoGoogleStory depoisDaPesquisaOUsuarioFechaAPagina() {
+	public PesquisandoAPalavraGroovyNoGoogleScenario depoisDaPesquisaOUsuarioFechaAPagina() {
 		googleSearchPage.close();
 		return this;
 	}
