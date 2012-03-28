@@ -35,7 +35,7 @@ public class PesquisandoNoGoogleStory {
 		return this;
 	}
 
-	public PesquisandoNoGoogleStory eAcessarAPaginaDoGoogle() {
+	public PesquisandoNoGoogleStory eAcessaAPaginaDoGoogle() {
 		googleSearchPage = initElements(firefox, GoogleSearchPage.class);
 		googleSearchPage.open("http://www.google.com");
 		return this;
@@ -51,7 +51,7 @@ public class PesquisandoNoGoogleStory {
 		return this;
 	}
 
-	public PesquisandoNoGoogleStory entaoGarantirOTituloDaPagina() {
+	public PesquisandoNoGoogleStory entaoValidarOTituloDaPagina() {
 		Assert.assertEquals("Google", googleSearchPage.getTitle());
 		return this;
 	}
